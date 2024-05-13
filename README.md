@@ -8,7 +8,7 @@
   </ol>
   <pre><code>git clone https://github.com/askarthi1611/Angular_P_C.git</code></pre>
   <p>Navigate to the project directory:</p>
-  <pre><code>cd your-angular-app</code></pre>
+  <pre><code>cd Angular_P_C</code></pre>
   <p>Install dependencies using npm:</p>
   <pre><code>npm install</code></pre>
 
