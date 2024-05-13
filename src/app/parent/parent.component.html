@@ -1,0 +1,122 @@
+<div>
+  <div>
+    <!-- This creates a heading with centered text -->
+    <h1 style="text-align: center">Form</h1>
+    <!-- This starts a form with Angular functionality -->
+    <form (ngSubmit)="submitForm()" #userForm="ngForm" class="formUser">
+      <!-- This creates a row for form elements -->
+      <div class="row">
+        <!-- This creates a column for the "Name" input field -->
+        <div class="col-12 col-md-6 col-lg-6 col-xl-4 col-xxl-3">
+          <div class="themeinput">
+            <!-- Label for the "Name" input -->
+            <label for="name">Name :</label>
+            <!-- Input field for the "Name" -->
+            <input
+              type="text"
+              id="name"
+              name="name"
+              [(ngModel)]="formData.name"
+              required
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-6 col-xl-4 col-xxl-3">
+          <!-- This creates a column for the "Age" input field -->
+          <div class="themeinput">
+            <label for="age">Age :</label>
+            <!-- Input field for the "Age" with data binding to formData.age -->
+            <input
+              type="number"
+              id="age"
+              name="age"
+              [(ngModel)]="formData.age"
+              required
+              class="form-control"
+            />
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-6 col-xl-4 col-xxl-3">
+          <!-- This creates a column for the "Date of Birth" input field -->
+          <div class="themeinput">
+            <label for="dob">Date of Birth :</label>
+            <!-- Input field for the "Date of Birth" with data binding to formData.dob -->
+            <input
+              type="date"
+              id="dob"
+              name="dob"
+              [(ngModel)]="formData.dob"
+              required
+              class="form-control"
+            />
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-6 col-xl-4 col-xxl-3">
+          <!-- This creates a column for the "Gender" selection dropdown -->
+          <div class="themeinput">
+            <!-- Label for the "Gender" selection -->
+            <label for="gender">Gender :</label>
+            <!-- Dropdown menu for selecting gender with data binding to formData.gender -->
+            <select
+              id="gender"
+              name="gender"
+              [(ngModel)]="formData.gender"
+              required
+              class="form-control"
+            >
+              <!-- Options for Male, Female, and Other -->
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-6 col-xl-4 col-xxl-3">
+          <!-- This creates a column for the "Email" input field -->
+          <div class="themeinput">
+            <label for="email">Email :</label>
+            <!-- Input field for the "Email" with data binding to formData.email -->
+            <input
+              type="email"
+              id="email"
+              name="email"
+              [(ngModel)]="formData.email"
+              required
+              class="form-control"
+            />
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-6 col-xl-4 col-xxl-3">
+          <!-- This creates a column for the "Phone" input field -->
+          <div class="themeinput">
+            <label for="phone">Phone :</label>
+            <!-- Input field for the "Phone" with data binding to formData.phone -->
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              [(ngModel)]="formData.phone"
+              required
+              class="form-control"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="add_btn"><button
+        style="width: 50%;min-width: fit-content;"
+        type="submit"
+        class="btn btn-primary mt-3"
+        [disabled]="!userForm.valid"
+      >
+        Add User
+      </button></div>
+    </form>
+  </div>
+
+  <app-child [items]="items" (deleteItem)="deleteItem($event)"></app-child>
+</div>
