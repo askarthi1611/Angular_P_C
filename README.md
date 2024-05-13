@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <body>
   <h1>Angular App</h1>
   <p>This is a simple Angular application.</p>
